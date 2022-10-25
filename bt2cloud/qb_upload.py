@@ -1,4 +1,5 @@
 #!/bin/python3
+# qb设置创建子文件夹
 from pyrclonerc import rclonerc,filerename
 import sys
 import re
