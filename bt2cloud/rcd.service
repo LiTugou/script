@@ -1,0 +1,13 @@
+[Unit]
+Description=rclone api control server
+Documentation=man:rclone(1)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=exec
+ExecStart= rclone --config "/root/.config/rclone/rclone.conf" rcd --rc-web-gui --rc-addr localhost:5572 --transfers 1 --rc-user rclone --rc-pass 971d30fd-b5cb-4979-a95c-15f65a69a024
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
