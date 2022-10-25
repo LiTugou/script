@@ -2,6 +2,7 @@
 import requests
 import json
 import os
+import re
 
 def filerename(filepath):
     upload_flag=True

@@ -16,9 +16,10 @@ passwd="971d30fd-b5cb-4979-a95c-15f65a69a024"
 rclient=rclonerc(user=user,passwd=passwd)
 
 if filenum==1:
-    dstFs,dstRemote=filerename(filepath)
-    dstpath=dstFs+dstRemote
-    rclient.move(filepath,dstpath)
+    dstFs,dstRemote,upload_flag=filerename(filepath)
+    if upload_flag:    
+        dstpath=dstFs+dstRemote
+        rclient.move(filepath,dstpath)
 else:
     rootfolder=os.path.dirname(filepath)
     for item in os.walk(rootfolder):
